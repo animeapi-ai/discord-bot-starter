@@ -30,7 +30,6 @@ export async function handleAnime(interaction) {
       prompt,
       model: config.model,
       orientation,
-      allowNSFW: config.allowNSFW,
     });
     const image = await downloadImage(result.image_url);
     const file = new AttachmentBuilder(image.buffer, { name: `anime.${image.extension}`, description: prompt.slice(0, 1000) });

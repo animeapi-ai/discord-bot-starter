@@ -33,7 +33,7 @@ Set `GUILD_ID` (your server's ID) in `.env` to make the command appear at once; 
 ## What it does
 
 - `/anime prompt:<text> orientation:<portrait|square|landscape>`
-- **Safe by default**: NSFW output is off (`ALLOW_NSFW=false`). Flagged images are refused and refunded, not posted.
+- AnimeAPI does not generate adult content. Explicit prompts are refused and not charged.
 - **Per-user cooldown**: 30 seconds between images per user (`COOLDOWN_SECONDS`, `0` turns it off).
 - **Balance empty**: the bot says so and gives the owner the add-funds link instead of failing silently.
 - Rejected prompts show the reason; busy or failed generations are retried once and refunded if they still fail.
@@ -47,7 +47,6 @@ All optional, in `.env`:
 | --- | --- | --- |
 | `ANIMEAPI_MODEL` | `anime` | `anime` $0.003, `ultra` $0.01, `ultra-max` $0.02 per image |
 | `ANIMEAPI_ORIENTATION` | `portrait` | Used when the user does not pick one |
-| `ALLOW_NSFW` | `false` | Set `true` only for age-restricted channels you control |
 | `COOLDOWN_SECONDS` | `30` | Per user |
 | `GUILD_ID` | empty | Register the command in one server immediately |
 
